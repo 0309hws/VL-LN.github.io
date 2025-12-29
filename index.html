@@ -335,23 +335,6 @@
     "keywords": ["embodied AI","visual-language navigation","dialog","benchmark","IION","long-horizon navigation"]
   }
   </script>
-  <script>
-    (function () {
-      const v = document.getElementById("projectVideo");
-      const startSec = 90; // 1:30
-  
-      function setStart() {
-        const dur = v.duration;
-        const t = (isFinite(dur) && dur > 0)
-          ? Math.min(startSec, dur - 0.1)
-          : startSec;
-        v.currentTime = Math.max(0, t);
-      }
-  
-      if (v.readyState >= 1) setStart();               // metadata already loaded
-      else v.addEventListener("loadedmetadata", setStart, { once: true });
-    })();
-  </script>
   <!-- Defer JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -867,5 +850,28 @@
     </footer>
 
   </main>
+  <script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const v = document.getElementById("projectVideo");
+    if (!v) return;
+  
+    const startSec = 90; // 1:30
+  
+    const setStart = () => {
+      const dur = v.duration;
+      const t = (Number.isFinite(dur) && dur > 0) ? Math.min(startSec, dur - 0.1) : startSec;
+      v.currentTime = Math.max(0, t);
+    };
+  
+    if (v.readyState >= 1) setStart();
+    else v.addEventListener("loadedmetadata", setStart, { once: true });
+  
+    // 有些浏览器会在第一次 play 时把时间轴“归零”，这里再补一刀
+    v.addEventListener("play", () => {
+      if (v.currentTime < startSec - 0.5) setStart();
+    }, { once: true });
+  });
+  </script>
+
 </body>
 </html>
