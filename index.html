@@ -855,7 +855,7 @@
     const v = document.getElementById("projectVideo");
     if (!v) return;
   
-    const startSec = 90; // 1:30
+    const startSec = 138; // 1:30
   
     const setStart = () => {
       const dur = v.duration;
@@ -866,7 +866,6 @@
     if (v.readyState >= 1) setStart();
     else v.addEventListener("loadedmetadata", setStart, { once: true });
   
-    // 有些浏览器会在第一次 play 时把时间轴“归零”，这里再补一刀
     v.addEventListener("play", () => {
       if (v.currentTime < startSec - 0.5) setStart();
     }, { once: true });
