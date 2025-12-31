@@ -6,8 +6,8 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
-  <meta name="description" content="VL-LN Bench introduces Interactive Instance Object Navigation (IION) and a large-scale dialog-augmented benchmark for training and evaluating dialog-enabled embodied navigation agents." />
-  <meta name="keywords" content="embodied AI, visual-language navigation, dialog, active perception, benchmark, IION, ION, long-horizon navigation, Qwen2.5-VL" />
+  <meta name="description" content="VL-LN Bench introduces Interactive Instance Goal Navigation (IIGN) and a large-scale dialog-augmented benchmark for training and evaluating dialog-enabled embodied navigation agents." />
+  <meta name="keywords" content="embodied AI, visual-language navigation, dialog, active perception, benchmark, IIGN, IGN, long-horizon navigation, Qwen2.5-VL" />
   <meta name="author" content="Wensi Huang, Shaohao Zhu, Meng Wei, Jinming Xu, Xihui Liu, Hanqing Wang, Tai Wang, Feng Zhao, Jiangmiao Pang" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Shanghai AI Laboratory" />
   <meta property="og:title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
-  <meta property="og:description" content="VL-LN Bench introduces IION and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
+  <meta property="og:description" content="VL-LN Bench introduces IIGN and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
   <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE" />
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png" />
   <meta property="og:image:width" content="1200" />
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE" />
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE" />
   <meta name="twitter:title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
-  <meta name="twitter:description" content="VL-LN Bench introduces IION and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
+  <meta name="twitter:description" content="VL-LN Bench introduces IIGN and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
   <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png" />
   <meta name="twitter:image:alt" content="VL-LN Bench - Research Preview" />
 
@@ -316,7 +316,7 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs",
-    "description": "VL-LN Bench introduces IION and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation.",
+    "description": "VL-LN Bench introduces IIGN and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation.",
     "author": [
       {"@type":"Person","name":"Wensi Huang"},
       {"@type":"Person","name":"Shaohao Zhu"},
@@ -332,7 +332,7 @@
     "publisher": {"@type":"Organization","name":"CONFERENCE_OR_JOURNAL_NAME"},
     "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
     "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["embodied AI","visual-language navigation","dialog","benchmark","IION","long-horizon navigation"]
+    "keywords": ["embodied AI","visual-language navigation","dialog","benchmark","IIGN","long-horizon navigation"]
   }
   </script>
   <!-- Defer JS -->
@@ -611,9 +611,9 @@
             In most existing embodied navigation tasks, instructions are well-defined and unambiguous, such as instruction following and object searching. 
             Under this idealized setting, agents are required solely to produce effective navigation outputs conditioned on vision and language inputs. 
             However, real-world navigation instructions are often vague and ambiguous, requiring the agent to resolve uncertainty and infer user intent through active dialog. 
-            To address this gap, we propose Interactive Instance Object Navigation (IION), 
+            To address this gap, we propose Interactive Instance Goal Navigation (IIGN), 
             a task that requires agents not only to generate navigation actions but also to produce language outputs via active dialog, 
-            thereby aligning more closely with practical settings. IION extends Instance Object Navigation (ION) by allowing agents to freely consult an oracle in natural language while navigating. 
+            thereby aligning more closely with practical settings. IIGN extends Instance Goal Navigation (IGN) by allowing agents to freely consult an oracle in natural language while navigating. 
             Building on this task, we present the Vision Language-Language Navigation (VL-LN) benchmark, which provides a large-scale, 
             automatically generated dataset and a comprehensive evaluation protocol for training and assessing dialog-enabled navigation models. 
             VL-LN comprises over 41k long-horizon dialog-augmented trajectories for training and an automatic evaluation protocol with an oracle capable of responding to agent queries. 
@@ -630,9 +630,9 @@
         <h2 class="title is-3 section-title">Task Introduction</h2>
 
         <figure>
-          <img src="static/images/first_image.png" alt="Overview of IION task and oracle interactions" loading="lazy" />
+          <img src="static/images/first_image.png" alt="Overview of IIGN task and oracle interactions" loading="lazy" />
           <figcaption class="has-text-left" style="margin-top: .85rem; color: var(--muted);">
-            We propose <strong>Interactive Instance Object Navigation (IION)</strong>: an agent explores an unknown scene to find a specific object instance,
+            We propose <strong>Interactive Instance Goal Navigation (IIGN)</strong>: an agent explores an unknown scene to find a specific object instance,
             asking an all-knowing oracle when uncertain. The oracle knows the scene and the agent's state, gives the initial goal (e.g., “Search for the chair”),
             and answers three question types (<strong>attribute</strong>, <strong>route</strong>, and <strong>disambiguation</strong>) to resolve ambiguity and guide the agent to the target.
           </figcaption>
@@ -756,7 +756,7 @@
           <div class="content is-size-6">
             <p>
               We employ <strong>Qwen2.5-VL-7B-Instruct</strong> as our baseline model and train it following the InternVLA-N1 procedure,
-              but with a different data mixture comprising visual-language navigation, goal-oriented navigation, and IION data.
+              but with a different data mixture comprising visual-language navigation, goal-oriented navigation, and IIGN data.
             </p>
           </div>
         </section>
